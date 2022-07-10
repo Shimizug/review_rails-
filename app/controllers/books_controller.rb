@@ -53,8 +53,4 @@ class BooksController < ApplicationController
     end
   end
   
-  
-  def weekly_rank
-    @ranks = Book.last_week
-  end
 end

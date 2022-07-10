@@ -21,11 +21,5 @@ class Book < ApplicationRecord
     else
       Book.where('title LIKE ?', '%'+content+'%')
     end
-
-
-
-  def self.last_week # メソッド名は何でも良いです
-   Book.joins(:favorites).where(favorites: { created_at:　0.days.ago.prev_week..0.days.ago.prev_week(:sunday)}).group(:id).order("count(*) desc")
-  end
   end
 end
